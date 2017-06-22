@@ -12,17 +12,17 @@
                 controller: 'homeCtrl',
                 controllerAs: 'hc'
             })
-            .state('home.ngtable', {
-                url: 'ngtable',
-                templateUrl: './_partials/p1/ngtable.html',
-                controller: 'homeNgtableCtrl',
-                controllerAs: 'htc'
-            })
             .state('home.fixer', {
                 url: 'fixercurrency',
                 templateUrl: './_partials/p1/fixercurrency.html',
                 controller: 'homeFixercurrencyCtrl',
                 controllerAs: 'hfc'
+            })
+            .state('home.ngtable', {
+                url: 'ngtable',
+                templateUrl: './_partials/p1/ngtable.html',
+                controller: 'homeNgtableCtrl',
+                controllerAs: 'htc'
             })
             .state('formlytags', {
                 url: '/formlytags',

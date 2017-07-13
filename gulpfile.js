@@ -22,7 +22,7 @@ var opts = {
     bsFontsSrc: 'node_modules/bootstrap-sass/assets/fonts/bootstrap/**/*',
     bsFontDest: './public/_mincss/bsFonts/',
     // jsTmp:      'assets/bundleTmp/tmp.js',
-    jsMetaMid: 'assets/build/js/',
+    jsMetaMid: './public/buildjs/',
     cssMetaMid: 'assets/build/css/',
     imgMin: 'public/_img/',
     jsMin: 'public/_minjs/',
@@ -122,7 +122,8 @@ gulp.task('libjsCompile', function() {
 
     gulp.src(libjsArr)
         .pipe(gPlugins.concat('lib-compiled.js'))
-        .pipe(gPlugins.uglify({ mangle: false }))
+        // .pipe(gPlugins.uglify({ mangle: false }))
+        .pipe(gPlugins.uglify())
         .pipe(gulp.dest(metaMid))
         .on('end', function() {
             bsReload();
@@ -213,7 +214,7 @@ gulp.task('watch', ['browser-sync'], function() {
 
     gulp.watch(appjsArr, ['appJsConcat']);
 
-    gulp.watch(concatJsArr, ['jsMinified']);
+    // gulp.watch(concatJsArr, ['jsMinified']);
 
     gulp.watch(opts.htmlIdx).on('change', bsReload);
 

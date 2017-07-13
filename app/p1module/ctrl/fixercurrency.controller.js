@@ -1,12 +1,12 @@
 (function() {
     'use strict';
 
-    var fcM = angular.module('p1.ctrl')
-    fcM.controller('homeFixercurrencyCtrl', fcCtrl);
+    angular.module('p1.ctrl')
+        .controller('homeFixercurrencyCtrl', ngtableCtrl);
 
-    fcCtrl.$inject = ['$log'];
+    ngtableCtrl.$inject = ['$log'];
 
-    function fcCtrl($log) {
+    function ngtableCtrl($log) {
         var vm = this;
     }
 

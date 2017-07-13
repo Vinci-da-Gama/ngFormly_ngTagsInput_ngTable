@@ -11,7 +11,9 @@
     <!-- favicon -->
     <link rel="icon" href="./_img/favicon_0.ico" type="image/x-icon" />
     <!-- compiled-app-js -->
-    <script type="text/javascript" language="javascript" src="./_minjs/app.min.js"></script>
+    <!--<script type="text/javascript" language="javascript" src="./_minjs/app.min.js"></script>-->
+    <!-- build-lib-js -->
+    <script type="text/javascript" language="javascript" src="./buildjs/lib-compiled.js"></script>
     <!-- product css -->
     <link rel="stylesheet" href="./_mincss/app_min.css" />
 </head>
@@ -45,6 +47,9 @@
     </nav>
 
     <div ui-view></div>
+    <!-- build-app-js -->
+    <script type="text/javascript" language="javascript" src="./buildjs/app-compiled.js"></script>
+
 </body>
 
 </html>

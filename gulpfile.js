@@ -122,8 +122,8 @@ gulp.task('libjsCompile', function() {
 
     gulp.src(libjsArr)
         .pipe(gPlugins.concat('lib-compiled.js'))
-        // .pipe(gPlugins.uglify({ mangle: false }))
-        .pipe(gPlugins.uglify())
+        .pipe(gPlugins.uglify({ mangle: false }))
+        // .pipe(gPlugins.uglify())
         .pipe(gulp.dest(metaMid))
         .on('end', function() {
             bsReload();

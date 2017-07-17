@@ -12,10 +12,10 @@
                 controller: 'homeCtrl',
                 controllerAs: 'hc'
             })
-            .state('home.fixer', {
-                url: 'fixercurrency',
-                templateUrl: './_partials/p1/fixercurrency.html',
-                controller: 'homeFixercurrencyCtrl',
+            .state('home.formly', {
+                url: 'formlyPractice',
+                templateUrl: './_partials/p1/formly.html',
+                controller: 'homeFormlyCtrl',
                 controllerAs: 'hfc'
             })
             .state('home.ngtable', {

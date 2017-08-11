@@ -8,44 +8,43 @@
 
     function ngFormlyCtrl($log, ProvincesConstant) {
         var vm = this;
-        console.log('11 -- ProvincesConstant: ', ProvincesConstant);
+
         vm.rentalModel = {};
         vm.rentalFields = [{
                 key: 'first_name',
-                type: 'input',
+                type: 'basicinput',
                 templateOptions: {
                     type: 'text',
                     label: 'First Name',
-                    placeholder: 'Enter your first name',
-                    required: true
+                    id: 'firsnameId',
+                    placeholder: 'Enter your first name'
                 }
             },
             {
                 key: 'last_name',
-                type: 'input',
+                type: 'basicinput',
                 templateOptions: {
                     type: 'text',
                     label: 'Last Name',
-                    placeholder: 'Enter your last name',
-                    required: true
+                    id: 'lastnameId',
+                    placeholder: 'Enter your last name'
                 }
             },
             {
                 key: 'email',
-                type: 'input',
+                type: 'basicinput',
                 templateOptions: {
                     type: 'email',
                     label: 'Email address',
-                    placeholder: 'Enter email',
-                    required: true
+                    id: 'emailId',
+                    placeholder: 'Enter email'
                 }
             },
             {
                 key: 'under25',
                 type: 'checkbox',
                 templateOptions: {
-                    label: 'Are You Under 25?',
-                    required: true
+                    label: 'Are You Under 25?'
                 },
                 hideExpression: '!model.email'
             }, ,
@@ -60,9 +59,10 @@
             },
             {
                 key: 'license',
-                type: 'input',
+                type: 'basicinput',
                 templateOptions: {
                     label: 'Driver\'s License Number -- In this case, you have to choose Ontario.',
+                    id: 'licenseId',
                     placeholder: 'Enter your drivers license number -- emp: a2222-55555-55555'
                 },
                 hideExpression: '!model.pt',
@@ -85,9 +85,10 @@
             },
             {
                 key: 'insurance',
-                type: 'input',
+                type: 'basicinput',
                 templateOptions: {
                     label: 'Insurance',
+                    id: 'insuranceId',
                     placeholder: 'Enter your insurance policy number'
                 },
                 hideExpression: '!model.under25 || !model.pt'

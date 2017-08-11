@@ -92,7 +92,7 @@ gulp.task('styles', /* ['cleanCacheAndOldCss'],*/ function() {
 
 
 var jq = opts.npmJs + 'jquery/dist/jquery.min.js';
-var jqmigrate = opts.npmJs + 'jquery-migrate/dist/jquery-migrate.js';
+var jqmigrate = opts.npmJs + 'jquery-migrate/dist/jquery-migrate.min.js';
 var apicheck = opts.npmJs + 'api-check/dist/api-check.min.js';
 var lodash = opts.npmJs + 'lodash/lodash.js';
 var moment = opts.npmJs + 'moment/min/moment.min.js';
@@ -105,12 +105,14 @@ var uiBootstrap = opts.npmJs + 'angular-ui-bootstrap/dist/ui-bootstrap-tpls.js';
 var formly = opts.npmJs + 'angular-formly/dist/formly.min.js';
 var formlyTmpl = opts.npmJs + 'angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.min.js';
 var ngTableJs = opts.npmJs + 'ng-table/bundles/ng-table.min.js';
+var ngMsg = opts.npmJs + 'angular-messages/angular-messages.min.js';
+var ngAria = opts.npmJs + 'angular-aria/angular-aria.min.js';
 var ngTabsInputJs = opts.npmJs + 'ng-tags-input/build/ng-tags-input.min.js';
 // var ngMask      = opts.npmJs + 'ng-mask/dist/ngMask.js';
 
 // clllections
 var jqRelated = [jq, jqmigrate, apicheck, lodash, bsjs, moment, momentLocal];
-var anguRelated = [angula, anguAnimate, uirouter, uiBootstrap, formly, formlyTmpl, ngTableJs, ngTabsInputJs /*, ngMask*/ ];
+var anguRelated = [angula, anguAnimate, uirouter, uiBootstrap, formly, formlyTmpl, ngTableJs, ngMsg, ngAria, ngTabsInputJs /*, ngMask*/ ];
 
 var libjsArr = jqRelated.concat(anguRelated);
 var metaMid = opts.jsMetaMid;
@@ -122,8 +124,8 @@ gulp.task('libjsCompile', function() {
 
     gulp.src(libjsArr)
         .pipe(gPlugins.concat('lib-compiled.js'))
-        .pipe(gPlugins.uglify({ mangle: false }))
-        // .pipe(gPlugins.uglify())
+        // .pipe(gPlugins.uglify({ mangle: false }))
+        .pipe(gPlugins.uglify())
         .pipe(gulp.dest(metaMid))
         .on('end', function() {
             bsReload();

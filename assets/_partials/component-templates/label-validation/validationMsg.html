@@ -1,0 +1,8 @@
+<div>
+    <formly-transclude></formly-transclude>
+    <ng-messages role="alert" for="fc.$errro" ng-if="showError">
+        <div ng-message="{{::name}}" ng-repeat="(name, message) in ::options.validation.messages">
+            {{message(fc.$viewValue, fc.$modelValue, this)}} -- hw
+        </div>
+    </ng-messages>
+</div>
